@@ -1,4 +1,6 @@
 <script lang="ts">
+    import * as Tasks from "$lib/tasks"
+
     interface Command {
         value: string;
         args: string[];
@@ -23,14 +25,12 @@
     }
 
     async function getTask(args: string[]): Promise<string> {
-        const response = await fetch(`api/task/${args[0]}`);
-        const task = await response.json();
+        const task = await Tasks.getTask(args[0]);
         return `task: id ${task.id}\n`;
     }
 
     async function getTasks(args: string[]): Promise<string> {
-        const response = await fetch("api/tasks");
-        const tasks = await response.json();
+        const tasks = await Tasks.getTasks();
         let result = "";
         for (let task of tasks) {
             result += `task: id ${task.id}\n`
