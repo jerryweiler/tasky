@@ -1,37 +1,45 @@
 Feature TODO list for the TODO app:
 
-* add database support - better-sqlite
-* add table for task list
-* task should have:
-    - auto-generated id
+- &check; add database support - better-sqlite
+- &check; add table for task list
+- task should have:
+    - &check; auto-generated id
     - parent id (default 0)
-    - title
+    - &check; title
     - creation time
     - completed time
     - description
     - priority
     - due date/time
-* add table for task log/history
-* add table for task note list
-* add table for task templates (automatic recurring or manually)
+- add table for task log/history
+- add table for task note list
+- add table for task templates (automatic recurring or manually)
 
 APIs for data:
-* add task (title, parent)
-* complete/uncomplete task
-* update title
-* update description
-* update parent
-* add note to task
-* update priority
-* list tasks given parent id (with completion filter)
-* list all tasks (with completion filter)
-* add recurrent task generator
-* add template (similar to generator, but manual)
-* enable/disable recurrent task generator
+- add task (title, parent)
+- complete/uncomplete task
+- update title
+- update description
+- update parent
+- add note to task
+- update priority
+- list tasks given parent id (with completion filter)
+- list all tasks (with completion filter)
+- add recurrent task generator
+- add template (similar to generator, but manual)
+- enable/disable recurrent task generator
 
-* add debug page
-* add task list to top-level page
-* clicking a task should navigate to task page
-* add page for selected task
-* add child tasks to selected task page
-* add 'new sub-task' page
+Pages:
+- &check; debug page
+- task list on top-level page
+- clicking a task should navigate to task page
+- selected task
+    - child tasks
+- &check; task creation
+- task editing
+
+TODO:
+- enhance task creation to use parent id
+- validate task title. must have at least one non-whitespace character
+- enhance layout of task creation page
+- have successful task creation redirect to the new task's page
