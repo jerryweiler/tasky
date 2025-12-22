@@ -70,6 +70,6 @@
 
 <h1>Debug Page</h1>
 <div class="p-2">
-	<input id="command" class="w-full border-2 border-black p-1" on:keydown={handleKeyDown} />
-	<pre id="output" class="mt-4 h-full w-full p-1"></pre>
+    <input id="command" class="w-full border-2 border-black p-1" on:keydown={handleKeyDown} />
+    <pre id="output" class="mt-4 h-full w-full p-1"></pre>
 </div>
