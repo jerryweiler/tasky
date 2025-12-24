@@ -1,5 +1,5 @@
 <script lang="ts">
-    import * as Tasks from "$lib/tasks"
+    import * as Tasks from "$lib/components/tasks"
 
     interface Command {
         value: string;

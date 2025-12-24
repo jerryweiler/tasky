@@ -39,6 +39,11 @@ function markComplete(id: number, completed: boolean): boolean {
     return info.changes > 0;
 }
 
+function getTask(id: number): Task[] {
+    const stmt = database.prepare('SELECT * FROM tasks where id = ?');
+    return stmt.all(id) as Task[];
+}
+
 function getAllTasks(): Task[] {
     const stmt = database.prepare('SELECT * FROM tasks ORDER BY id DESC');
     return stmt.all() as Task[];
@@ -49,5 +54,6 @@ export {
     addTask,
     deleteTask,
     markComplete,
+    getTask,
     getAllTasks,
 }

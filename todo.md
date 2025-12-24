@@ -31,9 +31,9 @@ APIs for data:
 
 Pages:
 - &check; debug page
-- task list on top-level page
+- &check; task list on top-level page
 - clicking a task should navigate to task page
-- selected task
+- &check; selected task
     - child tasks
 - &check; task creation
 - task editing

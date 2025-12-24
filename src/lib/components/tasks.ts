@@ -5,13 +5,13 @@ export type Task = {
     completed: boolean;
 }
 
-async function getTask(id: string) : Promise<Task> {
-    const response = await fetch(`api/task/${id}`);
-    return await response.json() as Task;
+async function getTask(id: string) : Promise<Task[]> {
+    const response = await fetch(`/api/task/${id}`);
+    return await response.json() as Task[];
 }
 
 async function getTasks() : Promise<Task[]> {
-    const response = await fetch("api/tasks");
+    const response = await fetch("/api/tasks");
     return await response.json() as Task[];
 }
 
