@@ -5,8 +5,10 @@
     let tasksPromise = Tasks.getTasks();
 </script>
 
-{#await tasksPromise then tasks}
-    {#each tasks as task}
-        <TaskPanel {task} />
-    {/each}
-{/await}
+<div class="w-60">
+    {#await tasksPromise then tasks}
+        {#each tasks as task}
+            <TaskPanel {task} class="w-full"/>
+        {/each}
+    {/await}
+</div>

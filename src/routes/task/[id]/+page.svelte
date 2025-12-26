@@ -5,4 +5,6 @@
 	let { data }: PageProps = $props();
 </script>
 
-<TaskPanel task={data.task} />
+<div class="w-60">
+    <TaskPanel task={data.task} class="w-full" />
+</div>
