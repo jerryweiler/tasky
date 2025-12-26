@@ -32,7 +32,7 @@ APIs for data:
 Pages:
 - &check; debug page
 - &check; task list on top-level page
-- clicking a task should navigate to task page
+- &check; clicking a task should navigate to task page
 - &check; selected task
     - child tasks
 - &check; task creation
