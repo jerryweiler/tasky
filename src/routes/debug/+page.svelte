@@ -10,6 +10,7 @@
     const commands: Command[] = [
         {value: "tasks", args:[], exec: getTasks},
         {value: "task", args:["taskid"], exec: getTask},
+        {value: "children", args: ["parentid"], exec: getChildren},
         {value: "help", args: [], exec: usage},
         {value: "?", args: [], exec: usage},
     ];
@@ -24,16 +25,37 @@
         return result;
     }
 
+    function formatTask(task: Tasks.Task, indent: string = "  "): string {
+        return `${indent}task:
+${indent}  id          ${task.id}
+${indent}  parent      ${task.parentid}
+${indent}  title       ${task.title}
+${indent}  description ${task.description ? task.description : "(empty)"}
+${indent}  ${task.completed ? "completed at " + task.completed : "not completed"}
+`;
+    }
+
     async function getTask(args: string[]): Promise<string> {
         const task = await Tasks.getTask(args[0]);
-        return `task: id ${task.id}\n`;
+        if (!task) return "task not found";
+
+        return formatTask(task);
     }
 
     async function getTasks(args: string[]): Promise<string> {
         const tasks = await Tasks.getTasks();
         let result = "";
         for (let task of tasks) {
-            result += `task: id ${task.id}\n`
+            result += formatTask(task);
+        }
+        return result;
+    }
+
+    async function getChildren(args: string[]): Promise<string> {
+        const tasks = await Tasks.getChildren(args[0]);
+        let result = "";
+        for (let task of tasks) {
+            result += formatTask(task);
         }
         return result;
     }
