@@ -8,7 +8,7 @@
 </script>
 
 <div class="w-60">
-    <div class="flex flex-row justify-end my-2">
+    <div class="my-2 flex flex-row justify-end">
         <CreateTask parentid={data.task.id} />
         <EditTask id={data.task.id} />
     </div>

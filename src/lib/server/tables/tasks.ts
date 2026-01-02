@@ -1,4 +1,4 @@
-import { database } from "$lib/server/database";
+import { database } from '$lib/server/database';
 
 export type Task = {
     id: number;
@@ -24,7 +24,7 @@ function toTask(value: DbTask): Task {
         title: value.title,
         description: value.description,
         completed: value.completed ? new Date(value.completed) : null
-    }
+    };
 }
 
 function initialize() {
@@ -37,7 +37,7 @@ function initialize() {
             completed TEXT DEFAULT NULL
         )
         `);
-    console.log("task table initialized");
+    console.log('task table initialized');
 }
 
 function addTask(title: string, parentid: number = 0): Task {
@@ -52,7 +52,7 @@ function addTask(title: string, parentid: number = 0): Task {
     };
 }
 
-function deleteTask(id: number) : boolean {
+function deleteTask(id: number): boolean {
     const stmt = database.prepare('DELETE FROM tasks WHERE id = ?');
     const info = stmt.run(id);
     return info.changes > 0;

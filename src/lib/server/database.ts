@@ -3,7 +3,7 @@ import Database, * as BetterSqlite3 from 'better-sqlite3';
 function openDatabase(): BetterSqlite3.Database {
     const database: BetterSqlite3.Database = new Database('tasks.sqlite');
 
-    console.log("db initialized");
+    console.log('db initialized');
     return database;
 }
 
